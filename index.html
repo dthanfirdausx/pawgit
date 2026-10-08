@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mini project TypeScript untuk mencatat kegiatan mahasiswa."
+    />
+    <title>Ruang Produktif Mahasiswa</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Mini Project TypeScript</p>
+          <h1 id="page-title">Ruang Produktif Mahasiswa</h1>
+          <p class="intro">
+            Catat tugas kuliah, tandai yang sudah selesai, dan lihat progresmu
+            hari ini.
+          </p>
+        </div>
+        <div class="date-card" aria-label="Tanggal hari ini">
+          <span>Hari ini</span>
+          <strong id="today">-</strong>
+        </div>
+      </section>
+
+      <section class="dashboard" aria-label="Daftar kegiatan">
+        <div class="task-panel">
+          <form id="task-form" class="task-form">
+            <label for="task-input">Kegiatan baru</label>
+            <div class="input-row">
+              <input
+                id="task-input"
+                name="task"
+                type="text"
+                maxlength="80"
+                placeholder="Contoh: Pelajari dasar TypeScript"
+                autocomplete="off"
+                required
+              />
+              <button type="submit">Tambah</button>
+            </div>
+          </form>
+
+          <div class="list-heading">
+            <div>
+              <p class="eyebrow">Agenda</p>
+              <h2>Kegiatanmu</h2>
+            </div>
+            <button id="clear-completed" class="text-button" type="button">
+              Hapus yang selesai
+            </button>
+          </div>
+
+          <ul id="task-list" class="task-list" aria-live="polite"></ul>
+          <p id="empty-state" class="empty-state">
+            Belum ada kegiatan. Tambahkan agenda pertamamu!
+          </p>
+        </div>
+
+        <aside class="progress-card" aria-labelledby="progress-title">
+          <p class="eyebrow">Ringkasan</p>
+          <h2 id="progress-title">Progres Hari Ini</h2>
+          <div class="progress-circle" id="progress-circle">
+            <strong id="progress-value">0%</strong>
+          </div>
+          <p id="progress-copy">Mulai dari satu kegiatan kecil.</p>
+          <dl class="stats">
+            <div>
+              <dt>Total</dt>
+              <dd id="total-count">0</dd>
+            </div>
+            <div>
+              <dt>Selesai</dt>
+              <dd id="completed-count">0</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
